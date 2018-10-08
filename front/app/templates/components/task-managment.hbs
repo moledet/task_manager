@@ -1,0 +1,44 @@
+<div  dir="rtl">
+    <div class="header">
+        <span class="title" >משימה</span>
+        <button class="add" onclick={{action "addTask"}}><span class="circle plus cursor-hand"></span></button>
+    </div>
+
+    <div class="component">
+        <div class="contnet">
+            <table>
+                {{#each tasks.list as |item index|}}
+
+                    <tr>
+                        <td>
+                            {{#if (if-cond item.status_id '==' 2)}}
+                                <input type="checkbox" disabled>
+                                {{else}}
+                                <input type="checkbox" onclick={{action "markDoneTask" item}}>
+                            {{/if}}
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            {{#if (if-cond item.status_id '==' 2)}}
+                                <span class="done">{{index}}. {{item.title}}</span>
+                            {{else}}
+                                {{index}}.   {{item.title}}
+                            {{/if}}
+                        </td>
+                        <td><b class="close cursor-hand" onclick={{action "deleteTask" item}}>x</b></td>
+                    </tr>
+
+                {{/each}}
+            </table>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="box">סה'כ:<b class="total">{{tasks.list.length}}</b></div>
+        <div class="box">להוסיף:<b class="past">{{tasks.done.length}}</b></div>
+        <div class="box">לסים:<b class="new">{{tasks.newTasks.length}}</b></div>
+    </div>
+</div>
+{{yield}}

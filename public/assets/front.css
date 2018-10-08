@@ -1,0 +1,105 @@
+.component {
+    width: 30%;
+    margin: 0 auto;
+    height: 350px;
+    overflow-y:scroll;
+}
+.header {
+    width: 30%;
+    margin: 0 auto;
+    height: 50px;
+    background-image: linear-gradient(#ffc662, #c28169);
+
+}
+.title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+    padding-right: 8px;
+    padding-top: 4px;
+}
+.circle{
+    border:1px solid #000;
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    position:relative;
+    margin:10px;
+    display:inline-block;
+}
+.circle.plus:before,
+.circle.plus:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:black;
+}
+.circle.plus:before{
+    width: 2px;
+    margin: 2px auto;
+}
+.circle.plus:after{
+    margin: auto 2px;
+    height: 2px;
+}
+.add {
+    padding: 0px;
+    margin: 5px;
+    height: 39px;
+    float: left;
+}
+.footer {
+    /*display: table;*/
+    /*margin: 0 auto;*/
+    width: 30%;
+    margin: 0 auto;
+    position: relative;
+    /*top: 200px;*/
+}
+.box {
+    width: 33%;
+    display: inline;
+    float: left;
+    text-align: center;
+    background-color: #e7e5eb;
+}
+.taskItem {
+    text-align: right;
+}
+.cursor-hand {
+    cursor: pointer;
+}
+span.done{
+    color: gray;
+    text-decoration:line-through;
+}
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+input[type="checkbox"]:disabled { 
+    filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+    box-shadow: none;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+tr{
+    width: 100%;
+}
+tr:nth-child(even) {background:#EDE8D5}
+tr:nth-child(odd) {background: white}
+td {
+    height: 35px;
+    overflow: hidden;
+    border: 0px;
+}
